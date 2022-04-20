@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WristWatch.Views.AddWatchPage"
+             BackgroundColor="{StaticResource Background}">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Margin="20" Padding="20, 0, 20, 0" BackgroundColor="{StaticResource Additional}">
+                <Label Margin="0, 20, 0, 0" Text="Device info" TextColor="{StaticResource Background}"  HorizontalOptions="Center"/>
+                <StackLayout Orientation="Vertical">
+                    <Entry Text="{Binding Name}"
+                           Placeholder="Name"
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding Description}"
+                           Placeholder="Description" 
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding Type}"
+                           Placeholder="Type"
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding Width}" 
+                           Placeholder="Width"
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding Thickness}"
+                           Placeholder="Thickness"
+                           HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding Price}" 
+                           Placeholder="Price, $"
+                           HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Margin="0, 20, 0, 0" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Select image" CornerRadius="30" Command="{Binding AddImage}"/>
+                    <Button Text="Select video" CornerRadius="30" Command="{Binding AddVideo}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Button Text="Add" 
+                            CornerRadius="30"
+                            Margin="0, 20, 0, 20"
+                            HorizontalOptions="Center"
+                            Command="{Binding Save}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

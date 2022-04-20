@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WristWatch.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#16b4cc</Color>
+            <Color x:Key="Accent">#e5f3ff</Color>
+            <Color x:Key="Selected">#383838</Color>
+            <Color x:Key="Additional">#575757</Color>
+            <Color x:Key="Opposite">#000000</Color>
+            <Color x:Key="Background">#dfdff2</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Opposite}"></Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="labelStyle">
+                <Setter Property="TextColor" Value="{StaticResource Opposite}"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="FontSize" Value="Body"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="{StaticResource Opposite}" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource Opposite}"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style TargetType="Frame" x:Key="LabelFrame">
+                <Setter Property="CornerRadius" Value="10"></Setter>
+                <Setter Property="HasShadow" Value="True"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource Accent}"></Setter>
+                <Setter Property="Padding" Value="5, 0, 0, 0"></Setter>
+            </Style>
+            <Style TargetType="Frame" x:Key="ImageFrame">
+                <Setter Property="HasShadow" Value="True"></Setter>
+                <Setter Property="CornerRadius" Value="25"></Setter>
+                <Setter Property="Padding" Value="0"></Setter>
+                <Setter Property="Margin" Value="20,20,20,0"></Setter>
+                <Setter Property="IsClippedToBounds" Value="True"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

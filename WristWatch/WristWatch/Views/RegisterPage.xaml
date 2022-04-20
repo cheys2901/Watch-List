@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d"
+             
+             x:Class="WristWatch.Views.RegisterPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.FlyoutBehavior="Disabled">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10, 0, 10, 0" VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand">
+                <Frame BackgroundColor="{StaticResource Additional}" HeightRequest="320" HasShadow="True" Padding="0" Margin="0">
+                    <StackLayout>
+                        <StackLayout Margin="10">
+                            <Label Text="Sign Up" TextTransform="Uppercase" TextColor="{StaticResource Background}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Padding="0" Margin="15,10">
+                            <StackLayout Orientation="Horizontal">
+                                <Entry Text="{Binding Email}" Placeholder="Email" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="10,10,10,0"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Entry Text="{Binding RePassword}" Placeholder="Rewrite password" IsPassword="True" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="10,10,10,20"/>
+                            </StackLayout>
+                            <Button Text="Sign Up" CornerRadius="30" Command="{Binding Register}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

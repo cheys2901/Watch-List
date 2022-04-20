@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WristWatch.Views.WatchListPage"
+             xmlns:views="clr-namespace:WristWatch.Views"
+             BackgroundColor="{StaticResource Background}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_add.png" Clicked="AddWatchClicked" />
+        <ToolbarItem IconImageSource="icon_filter.png" Clicked="FilterWatchClicked" />
+        <ToolbarItem IconImageSource="{Binding ViewIcon}" Clicked="ToolbarItem_Clicked" Command="{Binding ChangeView}" />
+    </ContentPage.ToolbarItems>
+
+    <RefreshView x:Name="refreshView" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <ListView x:Name="WatchList" IsVisible="{Binding IsListView}" RowHeight="100" ItemsSource="{Binding Items}" ItemTapped="OnItemClicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <views:ListCell Image="{Binding Image.DownloadUrl}" Name="{Binding Name}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+            <ScrollView>
+                <StackLayout>
+                    <Grid x:Name="grid" IsVisible="{Binding IsGridView}" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </RefreshView>
+</ContentPage>

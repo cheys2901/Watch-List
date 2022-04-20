@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "295272031103",
+    "project_id": "wristwatchdb",
+    "storage_bucket": "wristwatchdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295272031103:android:41097a8ae2e3894237704a",
+        "android_client_info": {
+          "package_name": "com.companyname.wristwatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295272031103-qig8b333m9a6anbk8m8pk4v7pikn0rkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIfmjs5HlNHClkNI1sj9fzDfsrUep4dpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295272031103-qig8b333m9a6anbk8m8pk4v7pikn0rkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

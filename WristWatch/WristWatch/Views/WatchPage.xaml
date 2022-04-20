@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+             
+             x:Class="WristWatch.Views.WatchPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.FlyoutBehavior="Disabled">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame Style="{StaticResource ImageFrame}">
+                    <Image x:Name="Image" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" 
+                           Source="{Binding ImageUrl}" />
+                </Frame>
+                <StackLayout x:Name="stackLayout" Padding="20">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Frame Style="{StaticResource LabelFrame}">
+                            <Label Text="Information" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" FontSize="Large" FontAttributes="Bold" Margin="0, 0, 0, 0" HorizontalTextAlignment="Center"/>
+                        </Frame>
+                        <Grid Margin="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30*" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <Frame Grid.Column="0" Grid.Row="0" Style="{StaticResource LabelFrame}">
+                                <Label Text="Name:"  HorizontalOptions="FillAndExpand" Style="{StaticResource labelStyle}"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Padding="10,0" />
+
+                            <Frame Grid.Column="0" Grid.Row="1" Style="{StaticResource LabelFrame}">
+                                <Label Text="Description:"  HorizontalOptions="FillAndExpand" Style="{StaticResource labelStyle}" HeightRequest="30"/>
+                            </Frame>
+                            <Label Text="{Binding Description}" Grid.Column="1" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Padding="10,0" />
+
+                            <Frame Grid.Column="0" Grid.Row="2" Style="{StaticResource LabelFrame}">
+                                <Label Text="Type:"  HorizontalOptions="FillAndExpand" Style="{StaticResource labelStyle}"/>
+                            </Frame>
+                            <Label Text="{Binding Type}" Grid.Column="1" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Padding="10,0" />
+
+                            <Frame Grid.Column="0" Grid.Row="3" Style="{StaticResource LabelFrame}">
+                                <Label Text="Width:"  HorizontalOptions="FillAndExpand" Style="{StaticResource labelStyle}"/>
+                            </Frame>
+                            <Label Text="{Binding Width}" Grid.Column="1" Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Padding="10,0" />
+
+                            <Frame Grid.Column="0" Grid.Row="4" Style="{StaticResource LabelFrame}">
+                                <Label Text="Thickness:"  HorizontalOptions="FillAndExpand" Style="{StaticResource labelStyle}"/>
+                            </Frame>
+                            <Label Text="{Binding Thickness}" Grid.Column="1" Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Padding="10,0" />
+
+                            <Frame Grid.Column="0" Grid.Row="5" Style="{StaticResource LabelFrame}">
+                                <Label Text="Price:"  HorizontalOptions="FillAndExpand" Style="{StaticResource labelStyle}"/>
+                            </Frame>
+                            <Label Text="{Binding Price}" Grid.Column="1" Grid.Row="5" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Padding="10,0" />
+                        </Grid>
+                        <xct:MediaElement x:Name="player" HeightRequest="250" IsVisible="false" AutoPlay="false" Margin="20, 0" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

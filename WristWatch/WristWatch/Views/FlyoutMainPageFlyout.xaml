@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WristWatch.Views.FlyoutMainPageFlyout"
+             Title="Flyout">
+    <!--<StackLayout BackgroundColor="{StaticResource Primary}">-->
+
+    <RefreshView x:Name="refreshView" IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+        <StackLayout BackgroundColor="{StaticResource Primary}">
+            <!--<ScrollView>-->
+            <ListView x:Name="MenuItemsListView"
+                                SeparatorVisibility="None"
+                                HasUnevenRows="true"
+                                ItemsSource="{Binding MenuItems}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" WidthRequest="25" VerticalOptions="FillAndExpand"  />
+                                <Label VerticalOptions="FillAndExpand" TextColor="{StaticResource Background}"
+                                VerticalTextAlignment="Center" 
+                                    Text="{Binding Title}" 
+                                    FontSize="19"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--</ScrollView>-->
+        </StackLayout>
+    </RefreshView>
+    <!--</StackLayout>-->
+</ContentPage>
